@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photography Studio Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Css/adminDashboard.css" />
+</head>
+<body>
+
+
+<aside class="sidebar">
+  <h2 class="logo">Studio Admin</h2>
+  <ul>
+    <li class="active" onclick="switchTab('overview', this)">Overview</li>
+    <li onclick="switchTab('users', this)">User Management</li>
+    <li onclick="switchTab('content', this)">Content</li>
+    <li onclick="switchTab('bookings', this)">Bookings</li>
+    <li onclick="switchTab('messages', this)">Messages</li>
+    <li onclick="switchTab('settings', this)">Settings</li>
+    <li onclick="switchTab('reports', this)">Reports</li>
+  </ul>
+</aside>
+
+
+<main>
+
+  <header class="topbar">
+    <h1>Dashboard</h1>
+    <div class="top-actions">
+      <button id="themeToggle">🌙</button>
+      <div class="admin">Admin</div>
+    </div>
+  </header>
+
+
+  <section id="overview" class="section active">
+    
+    <div class="stats">
+      <div class="stat blue">Total Bookings<br><strong>1,248</strong></div>
+      <div class="stat green">Revenue<br><strong>₹4,85,000</strong></div>
+      <div class="stat purple">Active Studios<br><strong>12</strong></div>
+      <div class="stat red">Users<br><strong>860</strong></div>
+    </div>
+
+   
+    <div class="grid">
+      <div class="card">
+        <h3>Booking Analytics</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Global Bookings</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="map" />
+      </div>
+
+      <div class="card">
+        <h3>Monthly Revenue</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Recent Activity</h3>
+        <ul class="activity">
+          <li>📸 Studio A booked</li>
+          <li>💳 Payment received</li>
+          <li>👤 New photographer joined</li>
+          <li>🖼 Gallery updated</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="users" class="section">
+    <h2>User Management</h2>
+    <table>
+      <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr>
+      <tr><td>Rahul</td><td>rahul@mail.com</td><td>Client</td><td>Active</td></tr>
+      <tr><td>Anita</td><td>anita@mail.com</td><td>Photographer</td><td>Active</td></tr>
+    </table>
+  </section>
+
+  
+  <section id="content" class="section">
+    <h2>Content Management</h2>
+    <button>Add Studio</button>
+    <button>Upload Images</button>
+  </section>
+
+ 
+  <section id="bookings" class="section">
+    <h2>Orders / Bookings</h2>
+    <table>
+      <tr><th>Studio</th><th>Date</th><th>Client</th><th>Status</th></tr>
+      <tr><td>Studio Pro</td><td>18 Mar</td><td>Kiran</td><td>Confirmed</td></tr>
+    </table>
+  </section>
+
+
+  <section id="messages" class="section">
+    <h2>Messages / Notifications</h2>
+    <div class="messages">
+      <div>📩 New booking request</div>
+      <div>💬 Client inquiry</div>
+      <div>⚠ Payment pending</div>
+    </div>
+  </section>
+
+  
+  <section id="settings" class="section">
+    <h2>Settings</h2>
+    <label>Studio Hours <input type="text" value="9 AM - 9 PM"></label>
+    <label>GST (%) <input type="number" value="18"></label>
+  </section>
+
+  
+  <section id="reports" class="section">
+    <h2>Reports & Analytics</h2>
+    <button>Download Booking Report</button>
+    <button>Download Revenue Report</button>
+  </section>
+</main>
+
+<script src="../Js/adminDashboard.js"></script>
+</body>
+</html>
